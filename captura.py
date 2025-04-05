@@ -29,9 +29,11 @@ def gerar_csv(dados):
 def enviar_bucket_raw(arquivo_csv):
     s3 = boto3.client('s3')
     bucket_name = 's3-ranier-raw'
-
-    s3.upload_file(arquivo_csv, bucket_name, arquivo_csv)
-    print(f"Arquivo {arquivo_csv} enviado para o bucket {bucket_name}.")
+    try:
+        s3.upload_file(arquivo_csv, bucket_name, arquivo_csv)
+        print(f"Arquivo {arquivo_csv} enviado para o bucket {bucket_name}.")
+    except Exception as e:
+        print(f"Erro ao enviar o arquivo para o bucket: {e}")
 
 if __name__ == "__main__":
     dados = coletar_dados()
