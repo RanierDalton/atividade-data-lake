@@ -38,5 +38,5 @@ def enviar_bucket_raw(arquivo_csv):
 if __name__ == "__main__":
     dados = coletar_dados()
     arquivo_csv = gerar_csv(dados)
-    # enviar_bucket_raw(arquivo_csv)
+    enviar_bucket_raw(arquivo_csv)
     
