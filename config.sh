@@ -17,3 +17,5 @@ pip install psutil
 pip install numpy
 pip install pandas
 pip install boto3
+
+python3 captura.py
